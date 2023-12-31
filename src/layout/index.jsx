@@ -1,21 +1,19 @@
 import React, { useState } from "react";
-import { Layout } from "@douyinfe/semi-ui";
+import { Layout, Button } from "@douyinfe/semi-ui";
 import HomePage from "@/pages/home";
 import SettingPage from "@/pages/setting";
 import Sidebar from "./components/Sidebar";
 
 const pages = [<HomePage />, <SettingPage />];
 
-const { Sider, Content } = Layout;
+const { Content } = Layout;
 
 export default function MainPage() {
   const [pageIndex, setPageIndex] = useState(0);
 
   return (
     <Layout className="flex">
-      <Sider style={{ width: "120px" }}>
-        <Sidebar onPageChanged={setPageIndex} />
-      </Sider>
+      <Sidebar currentIndex={pageIndex} onPageChanged={setPageIndex} />
       <Content>{pages[pageIndex]}</Content>
     </Layout>
   );

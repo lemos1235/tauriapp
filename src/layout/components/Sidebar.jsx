@@ -1,10 +1,40 @@
-import React from "react";
+import { Layout } from "@douyinfe/semi-ui";
+import { RiBuildingLine, RiDashboardLine, RiDownloadLine } from "@remixicon/react";
+const { Sider } = Layout;
 
-export default function Sidebar({ onPageChanged }) {
+function MenuButton({ title, icon, actived, onClick }) {
   return (
-    <div>
-      <div onClick={() => onPageChanged(0)}>home</div>
-      <div onClick={() => onPageChanged(1)}>setting</div>
+    <div
+      className={`${actived && "text-primary"} flex flex-col justify-center items-center cursor-pointer mt-5 mb-5`}
+      onClick={onClick}>
+      <div className="w-6 h-6">{icon}</div>
+      <div className="mt-1 text-sm">{title}</div>
     </div>
+  );
+}
+
+export default function Sidebar({ onPageChanged, currentIndex }) {
+  const menus = [
+    {
+      title: "概览",
+      icon: <RiDashboardLine />,
+    },
+    {
+      title: "下载",
+      icon: <RiDownloadLine />,
+    },
+  ];
+  return (
+    <Sider className="w-16 h-screen shadow-[0_5px_20px_rgba(0,0,0,0.06)]">
+      {menus.map(({ title, icon }, index) => (
+        <MenuButton
+          key={title}
+          title={title}
+          icon={icon}
+          actived={currentIndex === index}
+          onClick={() => onPageChanged(index)}
+        />
+      ))}
+    </Sider>
   );
 }
