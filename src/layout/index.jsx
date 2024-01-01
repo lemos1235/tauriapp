@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Layout, Button } from "@douyinfe/semi-ui";
 import HomePage from "@/pages/home";
-import SettingPage from "@/pages/setting";
+import DownloadPage from "@/pages/download";
 import Sidebar from "./components/Sidebar";
 
-const pages = [<HomePage />, <SettingPage />];
+const pages = [<HomePage />, <DownloadPage />];
 
 const { Content } = Layout;
 
