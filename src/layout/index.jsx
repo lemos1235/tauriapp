@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Layout, Button } from "@douyinfe/semi-ui";
-import HomePage from "@/pages/home";
-import DownloadPage from "@/pages/download";
-import Sidebar from "./components/Sidebar";
+import { Layout } from "@douyinfe/semi-ui";
+import { useState } from "react";
+import Siderbar from "./components/Siderbar";
+import ChatRoom from "@/pages/ChatRoom";
+import Home from "@/pages/home";
 
-const pages = [<HomePage />, <DownloadPage />];
+const pages = [<Home />, <ChatRoom />];
 
 const { Content } = Layout;
 
@@ -13,7 +13,7 @@ export default function MainPage() {
 
   return (
     <Layout className="flex">
-      <Sidebar currentIndex={pageIndex} onPageChanged={setPageIndex} />
+      <Siderbar currentIndex={pageIndex} onPageChanged={setPageIndex} />
       <Content>{pages[pageIndex]}</Content>
     </Layout>
   );

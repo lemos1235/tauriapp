@@ -1,5 +1,5 @@
 import { Layout } from "@douyinfe/semi-ui";
-import { RiBuildingLine, RiDashboardLine, RiDownloadLine } from "@remixicon/react";
+import { RiChatSmile3Line, RiDashboardLine } from "@remixicon/react";
 const { Sider } = Layout;
 
 function MenuButton({ title, icon, actived, onClick }) {
@@ -20,8 +20,8 @@ export default function Sidebar({ onPageChanged, currentIndex }) {
       icon: <RiDashboardLine />,
     },
     {
-      title: "下载",
-      icon: <RiDownloadLine />,
+      title: "聊天",
+      icon: <RiChatSmile3Line />,
     },
   ];
   return (
