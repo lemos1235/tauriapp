@@ -9,7 +9,7 @@ const pages = [<Home />, <ChatRoom />];
 const { Content } = Layout;
 
 export default function MainPage() {
-  const [pageIndex, setPageIndex] = useState(0);
+  const [pageIndex, setPageIndex] = useState(1);
 
   return (
     <Layout className="flex">
